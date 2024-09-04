@@ -1,0 +1,107 @@
+/* Metehan Ayhan  */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maaş Tahmin Eden Yapay Zeka Modeli</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+    
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+
+    
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+   
+        input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button[type="reset"] {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+
+        .prediction {
+            text-align: center;
+            color: #333;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Maaş Tahmin Eden Makine Öğrenmesi Modeli</h1>
+        <p>Bu model ile maaş tahmini yapabilirsiniz. Lütfen aşağıdaki formu doldurunuz.</p>
+        <form action="/predict" method="POST">
+            <label for="tecrube">Tecrübe:</label>
+            <input type="text" id="tecrube" name="tecrube" required>
+
+            <label for="yazili">Yazılı Sınav Notu:</label>
+            <input type="text" id="yazili" name="yazili" required>
+
+            <label for="mulakat">Mülakat:</label>
+            <input type="text" id="mulakat" name="mulakat" required>
+
+            <button type="submit">Tahmin et</button>
+            <button type="reset">Sil</button>
+        </form>
+
+     
+        <div class="prediction">
+            {{tahmin}}
+        </div>
+    </div>
+</body>
+</html>
